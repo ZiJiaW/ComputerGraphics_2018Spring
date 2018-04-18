@@ -210,5 +210,5 @@ glm::mat4 GetRotateMatrix(glm::vec3 p1, glm::vec3 p2, float theta)
     glm::vec4 tmp = trans2 * glm::vec4(cur_p2, 1.0f);
     cur_p2 = glm::vec3(tmp.x, tmp.y, tmp.z);
     rot = glm::rotate(rot, glm::radians(theta), cur_p2);
-    return rev_trans2 * rev_trans1 * rot * trans2 * trans1;
+    return rev_trans1 * rev_trans2 * rot * trans2 * trans1;
 }
